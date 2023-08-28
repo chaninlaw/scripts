@@ -1,0 +1,42 @@
+# core {{{
+[core]
+	editor = code --wait
+#}}}
+
+# user {{{
+[user]
+	name = ChaninL
+	email = chaninlawlert@gmail.com
+#}}}
+
+# alias {{{
+[alias]
+  # git add
+    a = add
+    aa = add -all
+  # git branch
+    b = branch
+  # git commit
+    cm = commit -m
+    cma = "!f() { git add -A && git commit -m \"$@\"; }; f"
+    cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+  #git log
+    l = log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=short --date-order
+    ll = log --pretty=format:"%C(yellow)%h %Cblue%aN%C(auto)%d %Creset%s%Cblue" --numstat
+  #git rebase
+    rbi = rebase -i
+  #git status
+    st = status
+  #git switch
+    sw = switch
+# }}}
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main
+[pull]
+  rebase = false
