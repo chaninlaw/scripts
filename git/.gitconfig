@@ -20,6 +20,8 @@
     cm = commit -m
     cma = "!f() { git add -A && git commit -m \"$@\"; }; f"
     cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+  # git fetch
+    f = fetch
   #git log
     l = log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=short --date-order
     ll = log --pretty=format:"%C(yellow)%h %Cblue%aN%C(auto)%d %Creset%s%Cblue" --numstat
