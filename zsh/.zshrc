@@ -140,3 +140,9 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Custom Message
+  echo "\e[32m"                    # Invoke a color
+  figlet -f "Sub-Zero" "Ninja"     # Use a slant font
+  echo "\e[0m"                     # Reset the color
+  echo -e "Learn, \e[1;4;33mUnlearn\e[0m, Relearn. \e[1mJust keep moving...\e[0m"
