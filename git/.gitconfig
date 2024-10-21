@@ -22,15 +22,22 @@
     cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
   # git fetch
     f = fetch
+    fp = fetch --prune
+    fsw = "!f() { git fetch && git switch \"$@\"; }; f"
   #git log
-    l = log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=short --date-order
-    ll = log --pretty=format:"%C(yellow)%h %Cblue%aN%C(auto)%d %Creset%s%Cblue" --numstat
+    l = log --pretty='%C(yellow)%h %C(cyan)%cd %C(blue)%aN %C(auto)%d %Creset%s' --graph --date=short --date-order
+    # ll = log --pretty=format:'%h %cd %aN %d %s' --numstat --date=short --date-order
+    ll = log --pretty=format:'%C(yellow)%h %C(cyan)%cd %C(blue)%aN %C(auto)%d %C(reset)%s' --numstat --date=short --date-order
   #git rebase
     rbi = rebase -i
   #git status
     st = status
   #git switch
     sw = switch
+  #git pull
+    po = pull origin
+  # undo
+    undo = reset --soft HEAD^
 # }}}
 
 [filter "lfs"]
