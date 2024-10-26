@@ -19,7 +19,7 @@
   # git commit
     cm = commit -m
     cma = "!f() { git add -A && git commit -m \"$@\"; }; f"
-    cmp = "!f() { git add -A && git commit -m \"$@\" && git push }; f"
+    cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
     cmpu = "!f() { git add -A && git commit -m \"$@\" && git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\"; }; f"
   # git fetch
     f = fetch
